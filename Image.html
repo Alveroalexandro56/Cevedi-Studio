@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced Cevedi Studio Logo</title>
+  <style>
+    body {
+      margin: 0;
+      background: radial-gradient(circle, #000 70%, #0d0d0d 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .logo-container {
+      position: relative;
+      text-align: center;
+    }
+
+    /* Hexagon with layered glow */
+    .hexagon {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      background: linear-gradient(135deg, #00ffff, #0077ff);
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      animation: glow 3s infinite alternate;
+      margin: 0 auto;
+    }
+
+    .hexagon::before, .hexagon::after {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      top: 0;
+      left: 0;
+      background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(0, 119, 255, 0.2));
+      z-index: -1;
+      filter: blur(20px);
+    }
+
+    .hexagon::after {
+      background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(0, 119, 255, 0.1));
+      filter: blur(40px);
+    }
+
+    @keyframes glow {
+      0% {
+        box-shadow: 0 0 15px #00ffff, 0 0 30px #0077ff, 0 0 50px #00ffff;
+      }
+      100% {
+        box-shadow: 0 0 30px #00ffff, 0 0 60px #0077ff, 0 0 90px #00ffff;
+      }
+    }
+
+    /* Text with enhanced glow */
+    .logo-text {
+      color: #00ffff;
+      font-size: 36px;
+      font-weight: bold;
+      margin-top: 20px;
+      text-shadow: 0 0 10px #00ffff, 0 0 20px #0077ff, 0 0 40px #00ffff;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      animation: text-glow 3s infinite alternate;
+    }
+
+    @keyframes text-glow {
+      0% {
+        text-shadow: 0 0 10px #00ffff, 0 0 20px #0077ff, 0 0 30px #00ffff;
+      }
+      100% {
+        text-shadow: 0 0 20px #00ffff, 0 0 40px #0077ff, 0 0 60px #00ffff;
+      }
+    }
+
+    /* Background particles */
+    .particles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .particle {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: #00ffff;
+      border-radius: 50%;
+      animation: particle-move 5s infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes particle-move {
+      0% {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-500px) translateX(200px);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="logo-container">
+    <div class="hexagon"></div>
+    <div class="logo-text">Cevedi Studio</div>
+    <div class="particles">
+      <!-- Random particles -->
+      <div class="particle" style="left: 20%; top: 70%; animation-delay: 0s;"></div>
+      <div class="particle" style="left: 50%; top: 80%; animation-delay: 1s;"></div>
+      <div class="particle" style="left: 30%; top: 90%; animation-delay: 2s;"></div>
+      <div class="particle" style="left: 70%; top: 60%; animation-delay: 3s;"></div>
+    </div>
+  </div>
+</body>
+</html>
